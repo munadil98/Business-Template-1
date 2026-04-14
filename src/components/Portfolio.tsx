@@ -1,29 +1,29 @@
 import { motion } from "motion/react";
 
-const projects = [
-  {
-    title: "Global Logistics Hub",
-    category: "Infrastructure",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "FinTech Revolution",
-    category: "Financial Services",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Sustainable Energy Grid",
-    category: "Energy",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Smart City Initiative",
-    category: "Public Sector",
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800",
-  },
-];
+export default function Portfolio({ content }: { content?: any[] }) {
+  const displayProjects = content || [
+    {
+      title: "Global Logistics Hub",
+      category: "Infrastructure",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+      title: "FinTech Revolution",
+      category: "Financial Services",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+      title: "Sustainable Energy Grid",
+      category: "Energy",
+      image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+      title: "Smart City Initiative",
+      category: "Public Sector",
+      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800",
+    },
+  ];
 
-export default function Portfolio() {
   return (
     <section id="portfolio" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,9 +40,9 @@ export default function Portfolio() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {displayProjects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -50,7 +50,7 @@ export default function Portfolio() {
               className="group relative overflow-hidden rounded-3xl aspect-[16/10]"
             >
               <img
-                src={project.image}
+                src={project.image || "https://picsum.photos/seed/project/800/500"}
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 referrerPolicy="no-referrer"

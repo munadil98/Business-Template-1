@@ -1,7 +1,13 @@
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
-export default function Contact() {
+export default function Contact({ content }: { content?: any }) {
+  const contactInfo = content || {
+    email: "hello@stratos.consulting",
+    phone: "+1 (555) 000-1234",
+    address: "123 Strategy Way, New York, NY 10001",
+  };
+
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +32,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-1">Email Us</p>
-                  <p className="text-lg font-medium text-brand-primary">hello@stratos.consulting</p>
+                  <p className="text-lg font-medium text-brand-primary">{contactInfo.email}</p>
                 </div>
               </div>
               <div className="flex items-start gap-6">
@@ -35,7 +41,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-1">Call Us</p>
-                  <p className="text-lg font-medium text-brand-primary">+1 (555) 000-1234</p>
+                  <p className="text-lg font-medium text-brand-primary">{contactInfo.phone}</p>
                 </div>
               </div>
               <div className="flex items-start gap-6">
@@ -44,7 +50,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-1">Visit Us</p>
-                  <p className="text-lg font-medium text-brand-primary">123 Strategy Way, New York, NY 10001</p>
+                  <p className="text-lg font-medium text-brand-primary">{contactInfo.address}</p>
                 </div>
               </div>
             </div>

@@ -56,12 +56,12 @@ export default function App() {
         <Navbar />
         <main>
           <Hero content={siteContent?.hero} />
-          <Services />
+          <Services content={siteContent?.services} />
           <About content={siteContent?.about} />
-          <Portfolio />
-          <Team />
-          <Testimonials />
-          <Contact />
+          <Portfolio content={siteContent?.portfolio} />
+          <Team content={siteContent?.team} />
+          <Testimonials content={siteContent?.testimonials} />
+          <Contact content={siteContent?.contact} />
         </main>
         <Footer />
         

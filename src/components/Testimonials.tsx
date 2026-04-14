@@ -19,7 +19,25 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials() {
+export default function Testimonials({ content }: { content?: any[] }) {
+  const displayTestimonials = content || [
+    {
+      content: "Stratos transformed our approach to global logistics. Their strategic insights were instrumental in our 40% growth last year.",
+      author: "James Wilson",
+      role: "CEO, Global Freight Solutions",
+    },
+    {
+      content: "The level of expertise and dedication the team brings is unmatched. They don't just consult; they partner for success.",
+      author: "Linda Park",
+      role: "COO, TechStream Systems",
+    },
+    {
+      content: "Working with Stratos was a turning point for our digital transformation journey. Highly professional and results-oriented.",
+      author: "Robert Miller",
+      role: "Director, Innovate Corp",
+    },
+  ];
+
   return (
     <section id="testimonials" className="py-24 bg-brand-primary text-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -31,9 +49,9 @@ export default function Testimonials() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">
-          {testimonials.map((testimonial, index) => (
+          {displayTestimonials.map((testimonial, index) => (
             <motion.div
-              key={testimonial.author}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

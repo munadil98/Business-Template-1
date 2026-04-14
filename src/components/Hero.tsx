@@ -47,7 +47,7 @@ export default function Hero({ content }: { content?: any }) {
               className="relative mx-auto w-full rounded-3xl shadow-2xl overflow-hidden aspect-[4/5]"
             >
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000"
+                src={content?.image || "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000"}
                 alt="Modern Office"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

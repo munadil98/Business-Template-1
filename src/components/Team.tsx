@@ -1,30 +1,30 @@
 import { motion } from "motion/react";
 import { Linkedin, Twitter, Mail } from "lucide-react";
 
-const team = [
-  {
-    name: "Alexander Vance",
-    role: "Chief Executive Officer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
-  },
-  {
-    name: "Elena Rodriguez",
-    role: "Managing Director",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400",
-  },
-  {
-    name: "Marcus Chen",
-    role: "Head of Strategy",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
-  },
-  {
-    name: "Sarah Jenkins",
-    role: "Director of Innovation",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=400",
-  },
-];
+export default function Team({ content }: { content?: any[] }) {
+  const displayTeam = content || [
+    {
+      name: "Alexander Vance",
+      role: "Chief Executive Officer",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+    },
+    {
+      name: "Elena Rodriguez",
+      role: "Managing Director",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400",
+    },
+    {
+      name: "Marcus Chen",
+      role: "Head of Strategy",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
+    },
+    {
+      name: "Sarah Jenkins",
+      role: "Director of Innovation",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=400",
+    },
+  ];
 
-export default function Team() {
   return (
     <section id="team" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,9 +36,9 @@ export default function Team() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {team.map((member, index) => (
+          {displayTeam.map((member, index) => (
             <motion.div
-              key={member.name}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -47,7 +47,7 @@ export default function Team() {
             >
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6">
                 <img
-                  src={member.image}
+                  src={member.image || "https://picsum.photos/seed/member/400/533"}
                   alt={member.name}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   referrerPolicy="no-referrer"

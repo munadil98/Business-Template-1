@@ -10,14 +10,68 @@
           "properties": {
             "title": { "type": "string" },
             "subtitle": { "type": "string" },
-            "description": { "type": "string" }
+            "description": { "type": "string" },
+            "image": { "type": "string" }
           }
         },
         "about": {
           "type": "object",
           "properties": {
             "title": { "type": "string" },
-            "description": { "type": "string" }
+            "description": { "type": "string" },
+            "image": { "type": "string" }
+          }
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "description": { "type": "string" },
+              "icon": { "type": "string" }
+            }
+          }
+        },
+        "portfolio": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "category": { "type": "string" },
+              "image": { "type": "string" }
+            }
+          }
+        },
+        "team": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "role": { "type": "string" },
+              "image": { "type": "string" }
+            }
+          }
+        },
+        "testimonials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "content": { "type": "string" },
+              "author": { "type": "string" },
+              "role": { "type": "string" }
+            }
+          }
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "email": { "type": "string" },
+            "phone": { "type": "string" },
+            "address": { "type": "string" }
           }
         },
         "updatedAt": { "type": "string", "format": "date-time" }

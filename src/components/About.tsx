@@ -16,7 +16,7 @@ export default function About({ content }: { content?: any }) {
           >
             <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000"
+                src={content?.image || "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000"}
                 alt="Our Team"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
