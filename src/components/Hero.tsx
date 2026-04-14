@@ -1,7 +1,11 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 
-export default function Hero() {
+export default function Hero({ content }: { content?: any }) {
+  const title = content?.title || "Elevate Your Vision to Reality.";
+  const subtitle = content?.subtitle || "Redefining Business Strategy";
+  const description = content?.description || "We partner with forward-thinking companies to build brands, products, and experiences that define the future of industry.";
+
   return (
     <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -13,13 +17,15 @@ export default function Hero() {
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-widest mb-6">
-                Redefining Business Strategy
+                {subtitle}
               </span>
               <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight text-brand-primary mb-8">
-                Elevate Your <span className="italic text-slate-400">Vision</span> to Reality.
+                {title.split(' ').map((word: string, i: number) => 
+                  word.toLowerCase() === 'vision' ? <span key={i} className="italic text-slate-400">Vision </span> : word + ' '
+                )}
               </h1>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl">
-                We partner with forward-thinking companies to build brands, products, and experiences that define the future of industry.
+                {description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start">
                 <button className="flex items-center justify-center px-8 py-4 bg-brand-primary text-white rounded-full font-medium hover:bg-slate-800 transition-all group">

@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
 
-export default function About() {
+export default function About({ content }: { content?: any }) {
+  const title = content?.title || "A Legacy of Innovation and Trust.";
+  const description = content?.description || "Founded on the principles of integrity and excellence, Stratos has grown from a boutique firm into a global leader in strategic consulting. We believe that the best solutions come from a deep understanding of our clients' unique challenges and aspirations.";
+
   return (
     <section id="about" className="py-24 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,10 +38,12 @@ export default function About() {
           >
             <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-slate-400 mb-4">Who We Are</h2>
             <h3 className="text-4xl md:text-5xl font-serif font-bold text-brand-primary mb-8 leading-tight">
-              A Legacy of <span className="italic">Innovation</span> and Trust.
+              {title.split(' ').map((word: string, i: number) => 
+                word.toLowerCase() === 'innovation' ? <span key={i} className="italic">Innovation </span> : word + ' '
+              )}
             </h3>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Founded on the principles of integrity and excellence, Stratos has grown from a boutique firm into a global leader in strategic consulting. We believe that the best solutions come from a deep understanding of our clients' unique challenges and aspirations.
+              {description}
             </p>
             <div className="space-y-6">
               {[
