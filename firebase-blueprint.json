@@ -74,6 +74,10 @@
             "address": { "type": "string" }
           }
         },
+        "theme": {
+          "type": "string",
+          "enum": ["default", "technical", "editorial", "hardware", "luxury-dark", "brutalist", "organic", "atmospheric", "minimal", "prestige"]
+        },
         "updatedAt": { "type": "string", "format": "date-time" }
       }
     },
