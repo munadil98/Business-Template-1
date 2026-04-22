@@ -31,7 +31,6 @@ export default function Team({ content, theme, config }: { content?: any[], them
 
   return (
     <section 
-      id="team" 
       className={`py-24 bg-[var(--bg-main)] ${isBrutalist ? 'border-b-4 border-black' : ''}`}
       style={config?.bgColor ? { backgroundColor: config.bgColor } : {}}
     >

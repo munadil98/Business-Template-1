@@ -31,7 +31,6 @@ export default function Portfolio({ content, theme, config }: { content?: any[],
 
   return (
     <section 
-      id="portfolio" 
       className={`py-24 bg-[var(--bg-main)] ${isBrutalist ? 'border-b-4 border-black' : ''}`}
       style={config?.bgColor ? { backgroundColor: config.bgColor } : {}}
     >

@@ -14,7 +14,6 @@ export default function Contact({ content, theme }: { content?: any, theme?: str
 
   return (
     <section 
-      id="contact" 
       className={`py-24 bg-[var(--bg-main)] ${isBrutalist ? 'border-b-4 border-black' : ''}`}
       style={content?.bgColor ? { backgroundColor: content.bgColor } : {}}
     >

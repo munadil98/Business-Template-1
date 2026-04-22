@@ -13,7 +13,6 @@ export default function Hero({ content, theme }: { content?: any, theme?: string
 
   return (
     <section 
-      id="home" 
       className={`relative pt-24 pb-16 lg:pt-40 lg:pb-40 overflow-hidden ${isAtmospheric ? 'min-h-screen flex items-center' : ''}`}
       style={content?.bgColor ? { backgroundColor: content.bgColor } : {}}
     >

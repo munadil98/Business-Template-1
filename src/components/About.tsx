@@ -10,7 +10,6 @@ export default function About({ content, theme }: { content?: any, theme?: strin
 
   return (
     <section 
-      id="about" 
       className={`py-24 bg-[var(--bg-main)] overflow-hidden ${isBrutalist ? 'border-b-4 border-black' : ''}`}
       style={content?.bgColor ? { backgroundColor: content.bgColor } : {}}
     >

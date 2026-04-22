@@ -151,7 +151,7 @@ export default function App() {
         <Navbar theme={siteContent?.theme} content={siteContent} />
         <main className="w-full">
           {(siteContent?.sectionOrder || ['hero', 'services', 'stats', 'about', 'portfolio', 'team', 'testimonials', 'faq', 'contact']).map((sectionId: string) => (
-            <div key={sectionId}>
+            <div key={sectionId} id={sectionId === 'hero' ? 'home' : sectionId}>
               {sectionId === 'hero' && siteContent?.hero?.visible !== false && <Hero content={siteContent?.hero} theme={siteContent?.theme} />}
               {sectionId === 'services' && siteContent?.servicesConfig?.visible !== false && (
                 <Services 

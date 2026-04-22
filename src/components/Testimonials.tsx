@@ -44,7 +44,6 @@ export default function Testimonials({ content, theme, config }: { content?: any
 
   return (
     <section 
-      id="testimonials" 
       className={`py-24 ${isMinimal ? 'bg-[var(--bg-main)] text-brand-primary' : 'bg-brand-primary text-[var(--bg-main)]'} overflow-hidden relative`}
       style={config?.bgColor ? { backgroundColor: config.bgColor } : {}}
     >

@@ -46,7 +46,6 @@ export default function Services({ content, theme, config }: { content?: any[], 
 
   return (
     <section 
-      id="services" 
       className={`py-24 bg-[var(--bg-main)] ${isBrutalist ? 'border-y-4 border-black' : ''}`}
       style={config?.bgColor ? { backgroundColor: config.bgColor } : {}}
     >
